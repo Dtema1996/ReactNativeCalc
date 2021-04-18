@@ -8,16 +8,19 @@ export default ({ onPress, text, size, colour }) => {
     const textStyles = [styles.text];
     const buttonStyles = [styles.button];
 
-    if (colour === "secondary") {
-        buttonStyles.push(styles.buttonSecondary);
-        textStyles.push(styles.textSecondary);
-    } else if (colour === 'accent') {
-        buttonStyles.push(styles.buttonAccent);
+    switch (colour) {
+        case 'secondary':
+            buttonStyles.push(styles.buttonSecondary);
+            textStyles.push(styles.textSecondary);
+            break;
+        case 'accent':
+            buttonStyles.push(styles.buttonAccent);
+            break;
+        case 'double':
+            buttonStyles.push(styles.buttonDouble)
+            break;
+        default:
     }
-    if (size === 'double') {
-        buttonStyles.push(styles.buttonDouble)
-    }
-
 
     return (
         <TouchableOpacity onPress={onPress} style={buttonStyles}>

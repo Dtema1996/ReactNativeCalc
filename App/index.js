@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, SafeAreaView, StyleSheet } from 'react-native';
+import { Text, View, SafeAreaView, StyleSheet, StatusBar } from 'react-native';
 import Row from './components/Row';
 import Button from './components/Button';
 
@@ -79,7 +78,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <StatusBar style="light-content" />
+            <StatusBar barStyle="light-content" />
             <SafeAreaView>
                 <Text style={styles.value}>{currentVal}</Text>
                 <Row>
@@ -130,8 +129,9 @@ const styles = StyleSheet.create({
     },
     value: {
         marginRight: 20,
-        fontSize: 80,
+        fontSize: 40,
         textAlign: "right",
+        marginBottom: 10,
         color: "#fff",
     },
 });
